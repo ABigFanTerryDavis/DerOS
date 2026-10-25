@@ -6,7 +6,7 @@ package dan200.computercraft.shared.computer.core;
 
 import com.google.common.annotations.VisibleForTesting;
 import dan200.computercraft.api.ComputerCraftAPI;
-import dan200.computercraft.api.filesystem.Mount;
+import dan200.computercraft.api.filesystem.WritableMount;
 import dan200.computercraft.api.network.PacketNetwork;
 import dan200.computercraft.core.ComputerContext;
 import dan200.computercraft.core.apis.http.NettyHttp;
@@ -219,8 +219,8 @@ public final class ServerContext {
 
     private record Environment(MinecraftServer server) implements GlobalEnvironment {
         @Override
-        public @Nullable Mount getRomMount() {
-            return ComputerCraftAPI.createResourceMount(server, "computercraft", "lua/rom");
+        public @Nullable WritableMount getRomMount() {
+            return (WritableMount) ComputerCraftAPI.createResourceMount(server, "computercraft", "lua/rom");
         }
 
         @Override

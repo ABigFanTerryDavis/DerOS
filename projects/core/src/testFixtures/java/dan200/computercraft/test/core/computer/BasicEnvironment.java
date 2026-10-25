@@ -4,7 +4,8 @@
 
 package dan200.computercraft.test.core.computer;
 
-import dan200.computercraft.api.filesystem.Mount;
+import dan200.computercraft.api.filesystem.WritableMount;
+import dan200.computercraft.core.filesystem.WritableFileMount;
 import dan200.computercraft.api.filesystem.WritableMount;
 import dan200.computercraft.core.ComputerContext;
 import dan200.computercraft.core.computer.ComputerEnvironment;
@@ -70,8 +71,8 @@ public class BasicEnvironment implements ComputerEnvironment, GlobalEnvironment 
     }
 
     @Override
-    public Mount getRomMount() {
-        return createMount(ComputerContext.class, "data/computercraft/lua/rom", "main");
+    public WritableMount getRomMount() {
+        return (WritableMount) createMount(ComputerContext.class, "data/computercraft/lua/rom", "main");
     }
 
     @Override
@@ -79,7 +80,7 @@ public class BasicEnvironment implements ComputerEnvironment, GlobalEnvironment 
         return Nullability.assertNonNull(ComputerContext.class.getClassLoader()).getResourceAsStream("data/computercraft/lua/bios.lua");
     }
 
-    public static Mount createMount(Class<?> klass, String path, String fallback) {
+    public static WritableMount createMount(Class<?> klass, String path, String fallback) {
         var file = getContainingFile(klass);
 
         if (file.isFile()) {
@@ -100,7 +101,7 @@ public class BasicEnvironment implements ComputerEnvironment, GlobalEnvironment 
 
             if (!wholeFile.exists()) throw new IllegalStateException("Cannot find ROM mount at " + file);
 
-            return new FileMount(wholeFile.toPath());
+            return new WritableFileMount(wholeFile, 1_000_000L);
         }
     }
 
