@@ -4,7 +4,7 @@
 
 package dan200.computercraft.core.computer;
 
-import dan200.computercraft.api.filesystem.WritableMount;
+import dan200.computercraft.api.filesystem.Mount;
 import org.jspecify.annotations.Nullable;
 
 import java.io.InputStream;
@@ -34,7 +34,7 @@ public interface GlobalEnvironment {
      *
      * @return The created mount or {@code null} if it could not be created.
      */
-    @Nullable WritableMount getRomMount();
+    @Nullable Mount getRomMount();
 
     /**
      * Get the program to initialise a Lua computer, typically known as {@code bios.lua}.
