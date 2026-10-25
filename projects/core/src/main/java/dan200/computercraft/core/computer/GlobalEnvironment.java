@@ -4,7 +4,7 @@
 
 package dan200.computercraft.core.computer;
 
-import dan200.computercraft.api.filesystem.Mount;
+import dan200.computercraft.api.filesystem.WritableMount;
 import org.jspecify.annotations.Nullable;
 
 import java.io.InputStream;
