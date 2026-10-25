@@ -1,9 +1,9 @@
 {
     "schemaVersion": 1,
     "id": "computercraft",
-    "name": "CC: Tweaked",
+    "name": "DerOS",
     "version": "${version}",
-    "description": "CC: Tweaked is a fork of ComputerCraft, adding programmable computers, turtles and more to Minecraft.",
+    "description": "DerOS is a full fork/rebrand of CC Tweaked with its own OS direction.",
     "license": "ComputerCraft Public License (https://raw.githubusercontent.com/dan200/ComputerCraft/master/LICENSE)",
     "icon": "pack.png",
     "contact": {

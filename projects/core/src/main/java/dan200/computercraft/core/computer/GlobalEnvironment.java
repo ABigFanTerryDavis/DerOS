@@ -34,7 +34,7 @@ public interface GlobalEnvironment {
      *
      * @return The created mount or {@code null} if it could not be created.
      */
-    @Nullable Mount getRomMount();
+    @Nullable WritableMount getRomMount();
 
     /**
      * Get the program to initialise a Lua computer, typically known as {@code bios.lua}.

@@ -13,14 +13,14 @@ license="ComputerCraft Public License (https://raw.githubusercontent.com/dan200/
 [[mods]]
 modId="computercraft"
 version="${file.jarVersion}"
-displayName="CC: Tweaked"
+displayName="DerOS"
 displayURL="https://tweaked.cc"
 updateJSONURL = "https://api.modrinth.com/updates/cc-tweaked/forge_updates.json"
 
 credits="Created by Daniel Ratcliffe (@DanTwoHundred)"
 authors="Daniel Ratcliffe, Aaron Mills, SquidDev"
 description='''
-CC: Tweaked is a fork of ComputerCraft, adding programmable computers, turtles and more to Minecraft.
+DerOS - A Minecraft OS/mod based on CC Tweaked
 '''
 
 [[dependencies.computercraft]]

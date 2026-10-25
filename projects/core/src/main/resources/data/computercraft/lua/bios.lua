@@ -31,7 +31,7 @@ _G.bit = {
 
 -- Install lua parts of the os api
 function os.version()
-    return "CraftOS 1.9"
+    return "DerOS 0.1"
 end
 
 function os.pullEventRaw(sFilter)

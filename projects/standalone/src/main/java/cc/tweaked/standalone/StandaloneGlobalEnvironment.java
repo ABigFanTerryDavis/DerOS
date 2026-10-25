@@ -4,9 +4,9 @@
 
 package cc.tweaked.standalone;
 
-import dan200.computercraft.api.filesystem.Mount;
+import dan200.computercraft.api.filesystem.WritableMount;
 import dan200.computercraft.core.computer.GlobalEnvironment;
-import dan200.computercraft.core.filesystem.FileMount;
+import dan200.computercraft.core.filesystem.WritableFileMount;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,8 +38,8 @@ public class StandaloneGlobalEnvironment implements GlobalEnvironment {
     }
 
     @Override
-    public Mount getRomMount() {
-        return new FileMount(resourceRoot.resolve("data/computercraft/lua/rom"));
+    public WritableMount getRomMount() {
+        return new WritableFileMount(resourceRoot.resolve("data/computercraft/lua/rom").toFile(), 1_000_000L);
     }
 
     @Override
